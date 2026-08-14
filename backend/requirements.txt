@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pandas
+numpy
+openpyxl
+xlrd
+python-dotenv
+resend
+google-genai
+pydantic[email]
