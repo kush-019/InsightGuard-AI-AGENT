@@ -1,163 +1,416 @@
-# InsightGuard — AI-Powered Anomaly Detection Agent
+# 🔴 InsightGuard — AI-Powered Anomaly Detection Agent
 
-> An end-to-end analytics and AI system that detects abnormal business patterns, explains **why they happened**, and recommends **what to investigate next**.
+> **Detect anomalies. Understand what happened. Know what to investigate next.**
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/Next.js-Frontend-black?logo=next.js" alt="Next.js">
-  <img src="https://img.shields.io/badge/AI-Powered-Anomaly%20Analysis-purple" alt="AI Powered">
-  <img src="https://img.shields.io/badge/Status-Active-success" alt="Status">
-</p>
+InsightGuard is an end-to-end **AI-powered anomaly detection and business analytics system** that automatically analyzes uploaded datasets, identifies critical anomalies, generates contextual AI explanations, and recommends investigation steps.
 
-## Overview
+Instead of simply telling a business that **"something went wrong,"** InsightGuard attempts to explain:
 
-**InsightGuard** is an AI-powered anomaly detection agent designed to go beyond simply identifying unusual data points.
-
-Traditional anomaly detection systems can tell you:
-
-> "Something unusual happened."
-
-InsightGuard aims to answer:
-
-> **"What happened, why did it happen, and what should I investigate next?"**
-
-The system analyzes business data, identifies abnormal patterns, generates an AI-powered explanation, and provides investigation recommendations through an interactive web interface.
-
-It can also communicate anomaly analysis through email notifications, making the system useful for automated monitoring workflows.
+* 🔎 **What happened?**
+* 📊 **Which metrics were affected?**
+* 🤖 **Why might it have happened?**
+* 🧭 **What should be investigated next?**
+* 📧 **How can the findings be communicated automatically?**
 
 ---
 
-## Key Features
+## 🚀 Live Demo
 
-### 🔍 Anomaly Detection
+**Live Application:**
+https://insightguard-ai-agent.vercel.app/
 
-Detects unusual patterns and deviations in business/data metrics.
+> The deployed application provides the interactive InsightGuard dashboard.
 
-* Identifies abnormal values and trends
-* Compares observed behavior against expected patterns
-* Highlights significant deviations
-* Presents detected anomalies in an accessible interface
+---
 
-### 🤖 AI-Powered Analysis
+## 📸 Application Preview
 
-Instead of stopping at anomaly detection, InsightGuard generates contextual analysis explaining the detected event.
+### Dashboard
 
-The AI analysis focuses on:
+The main dashboard provides an overview of the analyzed dataset, detected metrics, analyzed dates, and critical anomaly dates.
 
-* What changed
-* How significant the change is
-* Possible contributing factors
-* Business impact
-* Areas that require further investigation
+![InsightGuard Dashboard](docs/screenshots/dashboard-analysis.png)
 
-### 🧭 Investigation Recommendations
+---
 
-InsightGuard provides actionable next steps instead of simply reporting an anomaly.
+### Dataset Upload
 
-Example recommendations include:
+Users can upload an Excel or CSV dataset. InsightGuard automatically processes the uploaded data and begins the anomaly analysis workflow.
 
-* Investigate the affected metric
-* Compare against historical periods
-* Check related business dimensions
-* Examine potential contributing factors
-* Validate whether the anomaly represents a real business event
+![InsightGuard Dataset Upload](docs/screenshots/dashboard-empty.png)
 
-### 📊 Interactive Dashboard
+---
 
-The frontend provides a centralized interface for viewing:
+### Anomaly Detection Dashboard
 
-* Detected anomalies
-* Metric changes
-* AI-generated explanations
+Detected critical dates and affected metrics are presented through an interactive dashboard.
+
+The system highlights the magnitude of deviations from historical baselines and allows users to inspect individual anomaly events.
+
+![InsightGuard Anomaly Dashboard](docs/screenshots/anomaly-dashboard.png)
+
+---
+
+### AI-Powered Analysis
+
+For every significant anomaly, InsightGuard generates contextual AI analysis covering:
+
+* **What Happened**
+* **Key Metrics**
+* **Likely Reason**
+* **What to Investigate**
+
+![InsightGuard AI Analysis](docs/screenshots/email-ai-analysis.png)
+
+---
+
+### Automated Email Report
+
+InsightGuard can consolidate critical incidents into an email report so that important findings can be communicated without requiring users to continuously monitor the dashboard.
+
+![InsightGuard Email Report](docs/screenshots/email-report.png)
+
+---
+
+# 🎯 Problem Statement
+
+Traditional anomaly detection systems are often focused on identifying unusual values.
+
+For example:
+
+> Revenue decreased by 60%.
+
+While this is useful, it still leaves the analyst with several questions:
+
+> Why did revenue decrease?
+
+> Which part of the business caused the change?
+
+> Is the issue related to traffic, conversion, orders, or another factor?
+
+> What should the team investigate?
+
+InsightGuard was designed to bridge this gap between **anomaly detection and actionable investigation**.
+
+---
+
+# 💡 Solution
+
+InsightGuard combines automated anomaly detection with AI-generated analytical reasoning.
+
+The system follows this workflow:
+
+```text
+        Upload Business Dataset
+                 │
+                 ▼
+        Data Processing
+                 │
+                 ▼
+        Metric Detection
+                 │
+                 ▼
+       Historical Baseline
+             Analysis
+                 │
+                 ▼
+       Anomaly Detection
+                 │
+                 ▼
+       Critical Incidents
+                 │
+                 ▼
+        AI-Powered Analysis
+                 │
+        ┌────────┴─────────┐
+        ▼                  ▼
+   Explanation      Investigation Steps
+        │                  │
+        └────────┬─────────┘
+                 ▼
+          Web Dashboard
+                 │
+                 ▼
+       Consolidated Email
+             Report
+```
+
+---
+
+# ✨ Key Features
+
+## 1. 📂 Dataset Upload
+
+Users can upload business datasets in:
+
+* Excel (`.xlsx`)
+* CSV (`.csv`)
+
+InsightGuard processes the uploaded data and automatically begins the analysis pipeline.
+
+---
+
+## 2. 📊 Automatic Metric Detection
+
+The system analyzes the uploaded dataset and identifies relevant numerical business metrics.
+
+Examples include:
+
+* Revenue
+* Orders
+* Conversion Rate
+* Website Visits
+* Advertising Spend
+* Average Order Value
+
+This allows the system to work with business datasets without requiring every metric to be manually configured.
+
+---
+
+## 3. 🔎 Anomaly Detection
+
+InsightGuard compares observed metric values against historical behavior and identifies significant deviations.
+
+For every detected anomaly, the dashboard can display:
+
+| Information | Description                        |
+| ----------- | ---------------------------------- |
+| Date        | Date on which the anomaly occurred |
+| Metric      | Affected business metric           |
+| Actual      | Observed value                     |
+| Baseline    | Historical expected value          |
+| Change      | Percentage deviation               |
+| Severity    | Criticality of the anomaly         |
+
+---
+
+## 4. 🚨 Critical Incident Detection
+
+Multiple metric anomalies can occur on the same date.
+
+InsightGuard groups these events into critical incidents, allowing users to understand the broader business impact rather than examining isolated metrics individually.
+
+For example:
+
+```text
+1 April 2026
+
+Orders          ↓ 60.29%
+Conversion Rate ↓ 60.51%
+Revenue         ↓ 60.87%
+
+              ↓
+
+       Critical Incident
+```
+
+---
+
+# 🤖 AI-Powered Analysis
+
+One of InsightGuard's main goals is to move beyond traditional anomaly detection.
+
+When an anomaly is detected, the system generates contextual AI analysis.
+
+The analysis is structured around four key questions:
+
+### What Happened?
+
+Provides a natural-language explanation of the observed anomaly.
+
+### Key Metrics
+
+Summarizes the most important changes associated with the incident.
+
+### Likely Reason
+
+Uses the available business context and relationships between metrics to identify plausible explanations.
+
+### What to Investigate
+
+Provides practical investigation directions for the analyst or business team.
+
+---
+
+## Example AI Analysis
+
+For a critical revenue anomaly, InsightGuard can produce analysis such as:
+
+```text
+What Happened
+
+Total revenue dropped significantly compared to normal
+levels because fewer website visitors completed purchases.
+
+Key Metrics
+
+Revenue: down approximately 61%
+Orders: down approximately 60%
+Conversion Rate: down approximately 61%
+
+Likely Reason
+
+Advertising spend and website traffic remained normal,
+suggesting that the problem was not primarily caused by
+a lack of incoming visitors.
+
+What to Investigate
+
+Review the checkout system and payment processing flow
+for technical issues and investigate product availability
+during the affected period.
+```
+
+This transforms a raw anomaly into an **investigation starting point**.
+
+---
+
+# 📧 Automated Email Reporting
+
+InsightGuard can generate a consolidated critical incident report and send it through email.
+
+The email contains:
+
+* Critical incident dates
+* Affected metrics
+* Actual values
+* Historical baselines
+* Percentage changes
+* AI-generated analysis
 * Investigation recommendations
-* Relevant analytical information
 
-### 📧 Automated Email Notifications
+This enables stakeholders to receive important insights without continuously checking the dashboard.
 
-InsightGuard can send anomaly analysis through email so that important events can be communicated without requiring users to continuously monitor the dashboard.
+![InsightGuard Email](docs/screenshots/email-report.png)
+
+The AI analysis is included directly within the report:
+
+![InsightGuard Email AI Analysis](docs/screenshots/email-ai-analysis.png)
 
 ---
 
-## System Architecture
+# 📈 Dashboard
+
+The InsightGuard dashboard provides a centralized view of the analytical results.
+
+### Dashboard metrics include:
+
+* Total rows analyzed
+* Number of metrics detected
+* Number of dates analyzed
+* Number of critical dates
+* Anomaly timeline
+* Critical incident list
+* Affected metrics
+* AI analysis
+* AI insights
+* Email reporting
+
+![InsightGuard Dashboard](docs/screenshots/dashboard-analysis.png)
+
+---
+
+# 🧭 Anomaly Investigation Workflow
+
+The application is designed around a simple analyst workflow:
+
+### Step 1 — Upload
+
+Upload an Excel or CSV business dataset.
+
+### Step 2 — Analyze
+
+InsightGuard processes the dataset and identifies relevant business metrics.
+
+### Step 3 — Detect
+
+The system identifies significant deviations from historical behavior.
+
+### Step 4 — Understand
+
+AI-generated analysis explains the detected anomaly.
+
+### Step 5 — Investigate
+
+The system recommends areas that should be investigated.
+
+### Step 6 — Report
+
+Critical incidents can be consolidated into an email report.
+
+---
+
+# 🏗️ Project Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │     Business Data   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │  Anomaly Detection  │
-                    │       Engine        │
-                    └──────────┬──────────┘
-                               │
-                         Anomaly Found
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    AI Analysis      │
-                    │      Engine         │
-                    └──────────┬──────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-       ┌─────────────────┐          ┌─────────────────┐
-       │ Web Dashboard   │          │ Email Alerting  │
-       └─────────────────┘          └─────────────────┘
-                │
-                ▼
-       Investigation & Insights
+                         ┌──────────────────┐
+                         │  Excel / CSV     │
+                         │     Dataset      │
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │    Data Processing      │
+                    │    & Metric Analysis    │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │   Anomaly Detection      │
+                    │         Engine           │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │   Critical Incidents     │
+                    │       & Metrics          │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │      AI Analysis         │
+                    │        (Gemini)           │
+                    └────────────┬────────────┘
+                                 │
+                     ┌───────────┴───────────┐
+                     ▼                       ▼
+             ┌───────────────┐       ┌──────────────┐
+             │ Web Dashboard │       │ Email Report │
+             └───────────────┘       └──────────────┘
 ```
 
 ---
 
-## Project Structure
+# 🛠️ Tech Stack
 
-```text
-InsightGuard/
-│
-├── backend/
-│   ├── ...
-│   └── Python anomaly/AI engine
-│
-├── frontend/
-│   ├── ...
-│   └── Next.js application
-│
-├── data/
-│   └── Project datasets
-│
-├── README.md
-└── .gitignore
-```
-
-> The exact files and modules may vary as the project evolves.
-
----
-
-## Tech Stack
-
-### Frontend
+## Frontend
 
 * Next.js
 * React
 * TypeScript
-* Modern responsive UI
+* Responsive web UI
+* Data visualization components
 
-### Backend / AI Engine
+## Data & Analysis
 
 * Python
-* Data processing and anomaly analysis
-* AI-powered reasoning and explanation
-* REST/API integration
+* Pandas
+* Numerical/data processing
+* Historical baseline analysis
+* Anomaly detection
 
-### Communication
+## Artificial Intelligence
 
-* Email notification pipeline
-* Backend-to-frontend integration
+* Google Gemini
+* AI-generated anomaly explanations
+* AI-generated investigation recommendations
 
-### Development Tools
+## Communication
+
+* Email reporting
+* Consolidated critical incident reports
+
+## Deployment & Development
 
 * Git
 * GitHub
@@ -166,91 +419,51 @@ InsightGuard/
 
 ---
 
-## How It Works
-
-### 1. Data Input
-
-InsightGuard receives business or analytical data containing measurable metrics.
-
-### 2. Anomaly Detection
-
-The system analyzes the data and identifies significant deviations from expected behavior.
-
-### 3. Context Generation
-
-The detected anomaly is converted into meaningful analytical context, including the affected metric and relevant changes.
-
-### 4. AI Investigation
-
-The AI engine analyzes the anomaly and generates:
-
-* An explanation
-* Potential causes
-* Business implications
-* Recommended investigation steps
-
-### 5. Visualization
-
-The results are presented through the InsightGuard web dashboard.
-
-### 6. Notification
-
-The analysis can also be delivered through email, allowing users to receive anomaly insights without manually checking the dashboard.
-
----
-
-## Example Workflow
+# 📁 Project Structure
 
 ```text
-Metric changes significantly
-          ↓
-Anomaly detected
-          ↓
-Anomaly context generated
-          ↓
-AI analyzes the event
-          ↓
-Explanation generated
-          ↓
-Investigation steps recommended
-          ↓
-Dashboard updated
-          ↓
-Email notification sent
+InsightGuard-AI-AGENT/
+│
+├── backend/
+│   ├── ...
+│   └── Python analysis engine
+│
+├── frontend/
+│   ├── ...
+│   └── Next.js application
+│
+├── data/
+│   └── Project datasets
+│
+├── docs/
+│   └── screenshots/
+│       ├── dashboard-empty.png
+│       ├── dashboard-analysis.png
+│       ├── anomaly-dashboard.png
+│       ├── email-report.png
+│       └── email-ai-analysis.png
+│
+├── .env.example
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-## Why InsightGuard?
+# ⚙️ Installation
 
-Most anomaly detection systems focus primarily on **detection**.
+## Prerequisites
 
-InsightGuard focuses on the complete analytical workflow:
-
-| Traditional Detection         | InsightGuard                                |
-| ----------------------------- | ------------------------------------------- |
-| Detects unusual values        | Detects unusual values                      |
-| Reports anomalies             | Explains anomalies                          |
-| Requires manual investigation | Suggests investigation paths                |
-| Produces alerts               | Produces contextual analysis                |
-| Focuses on detection          | Focuses on detection → explanation → action |
-
-The goal is to reduce the time between **"something changed"** and **"we understand what to investigate."**
-
----
-
-## Getting Started
-
-### Prerequisites
-
-Make sure the following are installed:
+Make sure you have installed:
 
 * Python 3.x
 * Node.js
 * npm
 * Git
 
-### Clone the repository
+---
+
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/kush-019/InsightGuard-AI-AGENT.git
@@ -258,7 +471,9 @@ git clone https://github.com/kush-019/InsightGuard-AI-AGENT.git
 cd InsightGuard-AI-AGENT
 ```
 
-### Backend Setup
+---
+
+## 2. Backend Setup
 
 Navigate to the backend:
 
@@ -266,7 +481,7 @@ Navigate to the backend:
 cd backend
 ```
 
-Create a virtual environment:
+Create a Python virtual environment:
 
 ```bash
 python -m venv venv
@@ -278,37 +493,45 @@ Activate it on Windows:
 venv\Scripts\activate
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Environment Variables
+---
 
-Create a `.env` file based on `.env.example`.
+## 3. Environment Variables
 
-```env
-AI_API_KEY=your_api_key_here
-EMAIL_USERNAME=your_email_here
-EMAIL_PASSWORD=your_email_app_password_here
-```
-
-> Never commit your `.env` file or API credentials to GitHub.
-
-### Start the Backend
-
-Use the backend startup command appropriate to the project configuration.
+Create a `.env` file using `.env.example` as a template.
 
 Example:
+
+```env
+GEMINI_API_KEY=
+EMAIL_USERNAME=
+EMAIL_PASSWORD=
+```
+
+⚠️ **Never commit your actual `.env` file or API credentials to GitHub.**
+
+---
+
+## 4. Start the Backend
+
+Run the backend using the startup command defined by the project.
+
+For example:
 
 ```bash
 python app.py
 ```
 
-### Frontend Setup
+---
 
-Open another terminal:
+## 5. Frontend Setup
+
+Open another terminal and navigate to:
 
 ```bash
 cd frontend
@@ -326,7 +549,7 @@ Start the development server:
 npm run dev
 ```
 
-Then open:
+Open:
 
 ```text
 http://localhost:3000
@@ -334,108 +557,171 @@ http://localhost:3000
 
 ---
 
-## Environment Variables
+# 🔐 Security
 
-Sensitive configuration should be stored locally in `.env`.
+InsightGuard uses environment variables for sensitive configuration.
 
-A safe `.env.example` should contain placeholders only:
+The following should **never** be committed:
+
+```text
+.env
+API keys
+Email passwords
+Email app passwords
+Private credentials
+Deployment secrets
+```
+
+A `.env.example` file should contain placeholders only.
+
+Example:
 
 ```env
-AI_API_KEY=
+GEMINI_API_KEY=
 EMAIL_USERNAME=
 EMAIL_PASSWORD=
 ```
 
-Never upload actual credentials.
-
 ---
 
-## Screenshots
+# 📊 Example Incident
 
-Add screenshots of the finished application here.
+One of the dashboard scenarios demonstrates a critical incident where several business metrics dropped simultaneously.
 
-Recommended screenshots:
-
-1. **Main InsightGuard dashboard**
-2. **Detected anomaly**
-3. **AI-generated analysis**
-4. **Investigation recommendations**
-5. **Email notification**
-
-Example:
-
-```markdown
-## Dashboard
-
-![InsightGuard Dashboard](docs/screenshots/dashboard.png)
-
-## AI Analysis
-
-![AI Analysis](docs/screenshots/ai-analysis.png)
-
-## Email Alert
-
-![Email Notification](docs/screenshots/email-alert.png)
+```text
+                Critical Incident
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+      Orders      Conversion Rate   Revenue
+       -60.29%        -60.51%        -60.87%
+        │              │              │
+        └──────────────┼──────────────┘
+                       ▼
+                AI Investigation
+                       │
+                       ▼
+             Checkout / Payment
+             System Investigation
 ```
 
----
+The important insight is that the system does not stop at identifying the decline.
 
-## Deployment
-
-The frontend is deployed using **Vercel**.
-
-Live application:
-
-**InsightGuard:**
-https://insightguard-ai-agent.vercel.app/
-
-> Backend availability depends on the configured deployment and environment.
+It attempts to connect the affected metrics and provide a **business-oriented investigation path**.
 
 ---
 
-## Future Improvements
+# 🎯 Project Objectives
 
-Potential improvements include:
+InsightGuard was built to demonstrate how AI can enhance traditional data analytics workflows.
 
-* [ ] Support for additional anomaly detection techniques
-* [ ] More business metrics and datasets
+The primary objectives were:
+
+* Automate anomaly detection
+* Reduce manual monitoring
+* Explain abnormal business behavior
+* Provide actionable investigation recommendations
+* Present insights through an intuitive dashboard
+* Automate critical incident reporting
+* Connect data analytics with generative AI
+
+---
+
+# 🔮 Future Improvements
+
+Potential future improvements include:
+
+* [ ] User authentication and role-based access
 * [ ] Historical anomaly tracking
+* [ ] Configurable anomaly thresholds
 * [ ] Anomaly severity scoring
-* [ ] User authentication
-* [ ] Configurable alert thresholds
-* [ ] Additional notification channels
-* [ ] Automated anomaly reports
-* [ ] Improved AI investigation workflows
+* [ ] More advanced statistical detection techniques
+* [ ] Multiple AI model support
+* [ ] Slack/Teams notifications
+* [ ] Scheduled dataset analysis
+* [ ] Automated daily/weekly reports
+* [ ] Advanced anomaly correlation
+* [ ] Business-specific investigation playbooks
 * [ ] Production monitoring and observability
 
 ---
 
-## Project Goals
+# 🌟 Why InsightGuard?
 
-InsightGuard was built to explore the intersection of:
+InsightGuard is designed around a simple idea:
 
-* Data Analytics
-* Anomaly Detection
-* Artificial Intelligence
-* Business Intelligence
-* Automated Monitoring
-* Explainable Analytical Workflows
+> **Detection is only the beginning of investigation.**
 
-The project demonstrates how an analytical system can evolve from simply identifying abnormal data to providing **contextual explanations and actionable investigation guidance**.
+A traditional alert might tell an analyst:
+
+```text
+Revenue ↓ 60%
+```
+
+InsightGuard attempts to turn that into:
+
+```text
+Revenue ↓ 60%
+
+        ↓
+
+Orders ↓ 60%
+Conversion Rate ↓ 61%
+
+        ↓
+
+Traffic remained normal
+
+        ↓
+
+Potential issue in the purchasing process
+
+        ↓
+
+Investigate:
+• Checkout system
+• Payment processing
+• Product availability
+```
+
+This creates a workflow from:
+
+**Data → Detection → Explanation → Investigation → Action**
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-**Kushagra Srivastava**
+## Kushagra Srivastava
+
+B.Tech — Computer Science / Data Analytics
+
+Interested in:
+
+* Data Analytics
+* Business Intelligence
+* Artificial Intelligence
+* Data Engineering
+* Full-Stack Development
 
 GitHub:
 https://github.com/kush-019
 
 ---
 
-## License
+# 📌 Project Status
 
-This project is licensed under the MIT License.
+**Status:** Active Development
 
-See `LICENSE` for more information.
+InsightGuard is a portfolio project demonstrating the integration of:
+
+**Data Analytics + Anomaly Detection + Generative AI + Full-Stack Development + Automated Reporting**
+
+---
+
+## ⭐ If you find the project interesting
+
+Feel free to explore the repository, try the application, or provide feedback.
+
+**InsightGuard — Turning anomalies into actionable insights.**
